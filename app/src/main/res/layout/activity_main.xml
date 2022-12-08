@@ -26,7 +26,7 @@
         <ListView
             android:id="@+id/listViewVectorOrdenado"
             android:layout_width="160dp"
-            android:layout_height="284dp"
+            android:layout_height="360dp"
             android:layout_marginStart="60dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         <ListView
             android:id="@+id/listViewVectorIndices"
             android:layout_width="160dp"
-            android:layout_height="284dp"
+            android:layout_height="338dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.532"
@@ -66,7 +66,7 @@
         <ListView
             android:id="@+id/listViewVectorOriginal"
             android:layout_width="160dp"
-            android:layout_height="284dp"
+            android:layout_height="338dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="40dp"
             app:layout_constraintEnd_toEndOf="parent"
