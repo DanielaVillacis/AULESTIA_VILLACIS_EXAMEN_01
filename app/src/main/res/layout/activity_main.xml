@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="442dp"
+        android:layout_height="338dp"
         android:orientation="horizontal">
 
         <TextView
@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ListView
-            android:id="@+id/listViewVector"
+            android:id="@+id/listViewVectorOrdenado"
             android:layout_width="160dp"
             android:layout_height="284dp"
             android:layout_marginStart="60dp"
@@ -33,12 +33,33 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Vector de Indices"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/listViewVectorIndices"
+            android:layout_width="160dp"
+            android:layout_height="284dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView_vectororiginal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="16dp"
-            android:text="Lista Original"
+            android:text="Vector Original"
             app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,28 +70,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_vectororiginal" />
 
-        <ListView
-            android:id="@+id/listViewIndicesVector"
-            android:layout_width="160dp"
-            android:layout_height="284dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.532"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Indice Vectores Ordenados"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.533"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <LinearLayout

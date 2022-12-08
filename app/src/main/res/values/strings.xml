@@ -11,7 +11,7 @@
 
 <!--Segundo Activity-->
 
-    <string name="edittext_ingreseNumero">Ingrese un numero </string>
+    <string name="edittext_ingreseNumero">Ingrese un número </string>
     <string name="button_ingresar">Ingresar</string>
     <string name="button_cerrar">Cerrar</string>
 
