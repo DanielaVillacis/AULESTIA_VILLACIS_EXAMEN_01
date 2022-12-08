@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">AULESTIA_VILLACIS_EXAMEN_01</string>
+
+   <!--Primer Activity-->
+    <string name="textview_visualizarVector">Visualizacion del vector</string>
+    <string name="textview_indiceVector">Indice del Vector</string>
+    <string name="textview_vectorOriginal">Vector Original</string>
+    <string name="button_ordenar">Ordenar</string>
+    <string name="button_mostrar">Mostrar</string>
+    <string name="button_siguiente">Siguiente</string>
+
+<!--Segundo Activity-->
+
+    <string name="edittext_ingreseNumero">Ingrese un numero </string>
+    <string name="button_ingresar">Ingresar</string>
+    <string name="button_cerrar">Cerrar</string>
+
+
 </resources>
