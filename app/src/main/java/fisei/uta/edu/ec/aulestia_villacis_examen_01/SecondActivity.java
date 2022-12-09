@@ -69,10 +69,15 @@ public class SecondActivity extends AppCompatActivity {
         botonCerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putIntegerArrayListExtra("result",listaNumero);
-                setResult(Activity.RESULT_OK, intent);
-                finish();
+                if(listaNumero.size() == 0){
+                    Toast.makeText(SecondActivity.this, "Debe tener valores en la lista", Toast.LENGTH_SHORT).show();
+                }else {
+                    Intent intent = new Intent();
+                    intent.putIntegerArrayListExtra("result", listaNumero);
+                    setResult(Activity.RESULT_OK, intent);
+                    SecondActivity.super.onBackPressed();
+                }
+
             }
         });
 

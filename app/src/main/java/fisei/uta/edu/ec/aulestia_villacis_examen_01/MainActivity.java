@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonMostrar;
     private Button buttonOrdenar;
     ArrayList<Integer> listaNumero = new ArrayList<>();
+    ListView listaOriginal;
 
 
     ActivityResultLauncher<Intent> activityResult = registerForActivityResult(
@@ -32,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
                     if(result.getResultCode() == Activity.RESULT_OK){
                         Intent data = result.getData();
                         if(data != null){
-                            listaNumero = new ArrayList<>();
+                            buttonMostrar.setEnabled(true);
+                            buttonOrdenar.setEnabled(true);
                             listaNumero = data.getIntegerArrayListExtra("result");
 
-                           buttonMostrar.setEnabled(true);
-                           buttonOrdenar.setEnabled(true);
+
                         }else{
                             Toast.makeText(MainActivity.this,"NO se trajo los datos",Toast.LENGTH_LONG).show();
                         }
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSiguiente = findViewById(R.id.buttonSiguiente);
         buttonMostrar = findViewById(R.id.buttonMostrar);
         buttonOrdenar = findViewById(R.id.buttonOrdenar);
-        //listaOriginal = findViewById(R.id.listViewVectorOriginal);
+        listaOriginal = findViewById(R.id.listViewVectorOriginal);
 
         buttonMostrar.setEnabled(false);
         buttonOrdenar.setEnabled(false);
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         buttonOrdenar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+             //   listaOriginal.s
 
             }
         });
