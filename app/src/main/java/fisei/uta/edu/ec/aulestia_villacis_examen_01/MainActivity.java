@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> listaNumero = new ArrayList<>();
     ArrayList<Integer> listaIndice = new ArrayList<>();
     ListView listaOriginal;
-
+    ListView listaValorIndice;
 
 
     ActivityResultLauncher<Intent> activityResult = registerForActivityResult(
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMostrar = findViewById(R.id.buttonMostrar);
         buttonOrdenar = findViewById(R.id.buttonOrdenar);
         listaOriginal = findViewById(R.id.listViewVectorOriginal);
+        listaValorIndice = findViewById(R.id.listViewVectorIndices);
 
         buttonMostrar.setEnabled(false);
         buttonOrdenar.setEnabled(false);
@@ -89,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
                         android.R.layout.simple_list_item_1, listaNumero);
                listaOriginal.setAdapter(adapter);
 
+                ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(MainActivity.this,
+                        android.R.layout.simple_list_item_1, OrdenarDescendente(listaNumero));
+                listaValorIndice.setAdapter(adapter2);
+
+
 
             }
         });
@@ -97,26 +103,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public static int[] OrdenarDescendente(int[] vectorOriginal)
+    public static ArrayList<Integer> OrdenarDescendente( ArrayList<Integer> vectorOriginal)
     {
-        int i, j, n;
+        int i, j, n, temp=0;
 
-        n= vectorOriginal.length;
-        ArrayList<Integer> vectorIndice = new ArrayList<>();
+        n= vectorOriginal.size();
+        ArrayList<Integer> vectorIndice = new ArrayList<Integer>();
 
         for(i=0;i<n;i++)
         {
             for(j=i;j<n;j++)
             {
-                if(vectorOriginal[i]>vectorIndice[j])
+                if(vectorOriginal.get(i)>vectorOriginal.get(j))
                 {
-                    temp=vector[j];
-                    vector[j]=vector[i];
-                    vector[i]=temp;
+                    temp=vectorOriginal.get(j);
+                    vectorIndice.add(j,vectorOriginal.get(i));
+                    vectorIndice.add(i,temp);
                 }
             }
 
         }
+
+        return vectorIndice;
 
     }
 
