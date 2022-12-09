@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
             if (vectorOriginal.get(i) < vectorOriginal.get(i+1))
             {
                 temp = vectorOriginal.get(i);
-                vectorIndice.add(vectorOriginal.get(i+1));
-               temp = vectorOriginal.get(i+1);
+                vectorIndice.add(i, vectorOriginal.get(i+1));
+                vectorIndice.add(i+1, temp);
                 i = 0;
 
             }
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 i++;
             }
 
-        }while(i<n);
+        }while(i<n-1);
 
         return vectorIndice;
 

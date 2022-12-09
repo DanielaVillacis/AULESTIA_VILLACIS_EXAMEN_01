@@ -54,7 +54,7 @@ public class SecondActivity extends AppCompatActivity {
                 }else {
                     int num = Integer.valueOf(aux);
                     if(num == 0){
-                        Toast.makeText(SecondActivity.this, "Número no puede ser 0", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SecondActivity.this, "El número ingresado no puede ser 0", Toast.LENGTH_SHORT).show();
                     }else{
                         ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(SecondActivity.this,
                                 android.R.layout.simple_list_item_1, loadLista(num));
@@ -70,7 +70,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(listaNumero.size() == 0){
-                    Toast.makeText(SecondActivity.this, "Debe tener valores en la lista", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondActivity.this, "No existen valores en la lista", Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent = new Intent();
                     intent.putIntegerArrayListExtra("result", listaNumero);
