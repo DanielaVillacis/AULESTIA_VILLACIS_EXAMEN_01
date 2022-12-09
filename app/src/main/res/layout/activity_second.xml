@@ -20,7 +20,8 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/edittext_ingreseNumero"
-            android:inputType="number"
+            android:inputType="numberSigned|number"
+
             android:maxLength="6"
             android:minHeight="48dp"
             android:textColorHint="#757575"

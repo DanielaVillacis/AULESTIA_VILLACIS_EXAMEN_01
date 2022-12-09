@@ -34,7 +34,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
 
         listaDevolver = findViewById(R.id.listViewNumeros);
         botonCerrar = findViewById(R.id.buttonCerrar);
@@ -59,7 +59,7 @@ public class SecondActivity extends AppCompatActivity {
                         ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(SecondActivity.this,
                                 android.R.layout.simple_list_item_1, loadLista(num));
                         listaDevolver.setAdapter(adapter);
-                       edtNumeroIngresado.setText("");
+                        edtNumeroIngresado.setText("");
                     }
                 }
 
