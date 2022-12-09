@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> listaNumero = new ArrayList<>();
     ArrayList<Integer> listaIndice = new ArrayList<>();
     ListView listaOriginal;
+    ListView listaOrdenado;
     ListView listaValorIndice;
 
 
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         buttonOrdenar = findViewById(R.id.buttonOrdenar);
         listaOriginal = findViewById(R.id.listViewVectorOriginal);
         listaValorIndice = findViewById(R.id.listViewVectorIndices);
+        listaOrdenado= findViewById(R.id.listViewVectorOrdenado);
 
         buttonMostrar.setEnabled(false);
         buttonOrdenar.setEnabled(false);
@@ -79,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(MainActivity.this,
+                        android.R.layout.simple_list_item_1, OrdenarDescendente(listaNumero));
+                listaOrdenado.setAdapter(adapter2);
 
             }
         });
@@ -90,9 +95,6 @@ public class MainActivity extends AppCompatActivity {
                         android.R.layout.simple_list_item_1, listaNumero);
                listaOriginal.setAdapter(adapter);
 
-                ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(MainActivity.this,
-                        android.R.layout.simple_list_item_1, OrdenarDescendente(listaNumero));
-                listaValorIndice.setAdapter(adapter2);
 
 
 
@@ -109,15 +111,21 @@ public class MainActivity extends AppCompatActivity {
 
         n= vectorOriginal.size();
         ArrayList<Integer> vectorIndice = new ArrayList<Integer>();
+        ArrayList<Integer> vectorAux = new ArrayList<Integer>();
+
+
+        for (i=0 ; i<vectorOriginal.size(); i++){
+           vectorAux.add(i, vectorOriginal.get(i));
+        }
         i=0;
         do
         {
 
-            if (vectorOriginal.get(i) < vectorOriginal.get(i+1))
+            if (vectorAux.get(i) < vectorAux.get(i+1))
             {
-                temp = vectorOriginal.get(i);
-                vectorIndice.add(i, vectorOriginal.get(i+1));
-                vectorIndice.add(i+1, temp);
+                temp = vectorAux.get(i);
+                vectorAux.add(i, vectorAux.get(i+1));
+                vectorAux.add(i+1, temp);
                 i = 0;
 
             }
@@ -128,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
         }while(i<n-1);
 
-        return vectorIndice;
+        return vectorAux;
 
     }
 
