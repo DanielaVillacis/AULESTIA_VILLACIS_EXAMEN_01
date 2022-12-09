@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                         }else{
-                            Toast.makeText(MainActivity.this,"NO se trajo los datos",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this,"NO EXISTEN DATOS",Toast.LENGTH_LONG).show();
                         }
                     }
                 }
@@ -105,24 +105,28 @@ public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<Integer> OrdenarDescendente( ArrayList<Integer> vectorOriginal)
     {
-        int i, j, n, temp=0;
+        int i, n, temp;
 
         n= vectorOriginal.size();
         ArrayList<Integer> vectorIndice = new ArrayList<Integer>();
-
-        for(i=0;i<n;i++)
+        i=0;
+        do
         {
-            for(j=i;j<n;j++)
+
+            if (vectorOriginal.get(i) < vectorOriginal.get(i+1))
             {
-                if(vectorOriginal.get(i)>vectorOriginal.get(j))
-                {
-                    temp=vectorOriginal.get(j);
-                    vectorIndice.add(j,vectorOriginal.get(i));
-                    vectorIndice.add(i,temp);
-                }
+                temp = vectorOriginal.get(i);
+                vectorIndice.add(vectorOriginal.get(i+1));
+               temp = vectorOriginal.get(i+1);
+                i = 0;
+
+            }
+            else
+            {
+                i++;
             }
 
-        }
+        }while(i<n);
 
         return vectorIndice;
 
