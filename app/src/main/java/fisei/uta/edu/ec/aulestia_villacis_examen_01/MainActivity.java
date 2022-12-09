@@ -10,11 +10,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonMostrar;
     private Button buttonOrdenar;
     ArrayList<Integer> listaNumero = new ArrayList<>();
+    ArrayList<Integer> listaIndice = new ArrayList<>();
     ListView listaOriginal;
+
 
 
     ActivityResultLauncher<Intent> activityResult = registerForActivityResult(
@@ -73,9 +77,51 @@ public class MainActivity extends AppCompatActivity {
         buttonOrdenar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //   listaOriginal.s
+
 
             }
         });
+
+        buttonMostrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(MainActivity.this,
+                        android.R.layout.simple_list_item_1, listaNumero);
+               listaOriginal.setAdapter(adapter);
+
+
+            }
+        });
+
+
     }
+
+
+    public static int[] OrdenarDescendente(int[] vectorOriginal)
+    {
+        int i, j, n;
+
+        n= vectorOriginal.length;
+        ArrayList<Integer> vectorIndice = new ArrayList<>();
+
+        for(i=0;i<n;i++)
+        {
+            for(j=i;j<n;j++)
+            {
+                if(vectorOriginal[i]>vectorIndice[j])
+                {
+                    temp=vector[j];
+                    vector[j]=vector[i];
+                    vector[i]=temp;
+                }
+            }
+
+        }
+
+    }
+
+
+
+
+
 }
